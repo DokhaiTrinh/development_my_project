@@ -1,0 +1,32 @@
+.MuiCard-root{
+    width: 240px;
+    border-radius: 5px;
+    /* box-shadow: none; */
+}
+.MuiCardMedia-root{
+    height: 150px;
+}
+
+.MuiCardMedia-img__icon{
+    object-fit: contain;
+}
+
+.MuiCardContent-root{
+    height: 20px;
+    min-height: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size:small;
+}
+
+.MuiCardActions-root{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .MuiTypography-root{
+    font-size: medium;
+    font-weight: bold;
+    color: #696969;
+} */

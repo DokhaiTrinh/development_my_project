@@ -1,0 +1,9 @@
+@import "~@chatscope/chat-ui-kit-styles/themes/default/variables";
+$color-primary: var(--cs-color-primary-dark);
+$message-content-outgoing-bg-color: var(--cs-color-primary-dark);
+$message-content-incoming-bg-color: var(--cs-color-primary-light);
+$message-input-content-editor-wrapper-bg-color: var(--cs-color-primary-light);
+$message-input-content-editor-bg-color: var(--cs-color-primary-light);
+$conversation-hover-bg-color: var(--cs-color-primary-light);
+$button-attachment-color: var(--cs-color-primary-dark);
+$button-send-color: var(--cs-color-primary-dark);

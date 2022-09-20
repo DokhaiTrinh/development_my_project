@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.home, .report, .report {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;    
+}
+
+.MuiButton-root{
+    border-radius: 5px;
+    background: #F1F1F1;
+    color: #696969;
+    box-shadow: none;
+}
+
+.MuiButton-root:hover{
+    border-radius: 5px;
+    background: transparent;
+    color: #696969;
+    top: -4px;
+    transition: top 0.5s;
+}
+
+.MuiSvgIcon-root{
+    color: #696969;
+}	
+
+.MuiTabs-root{
+    width: 88%;
+    height: min-content;
+    background: #FFD8A9;
+    border-radius: 10px;
+    border-bottom: none;
+    padding: 12px 32px;
+    position: fixed;
+    z-index: 1;
+}
+
+
+.MuiTabs-indicator{
+    height: 48px;
+    position: absolute;
+    top: 0;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.Mui-selected{
+    transition: background 1s;
+    z-index: 1;
+}
+
+.MuiTab-textColorPrimary{
+    color: #696969;
+}
+
+.MuiDivider-root{
+    margin-bottom: 32px;
+}
+
+.MuiTypography-body2{
+    color: #DD8501;
+}
+
+.MuiTypography-h6{
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.MuiTypography-h5{
+    font-weight: bolder;
+    color: #696969;
+}
+
+.MuiTypography-h4{
+    color: #fff;
+}
+
+.MuiTypography-caption{
+    font-size: medium;
+    font-weight: bolder;
+    color: #696969;
+}
+
+/* .MuiTextField-root fieldset{
+    background: #F1F1F1;
+    border-color: green;
+} */
+
+.MuiTextField-root fieldset{
+    border-color: #DD8501;
+}
+
+/* 
+.MuiOutlinedInput-root fieldset{
+    border-color: #DD8501;
+} */
+
+
+.MuiFormControl-root{
+    background: #F1F1F1;
+}
+
+.MuiSpeedDial-root{
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+}
+
+.MuiSpeedDial-fab,
+.MuiSpeedDial-fab:hover{
+    background-color: #FFD8A9;
+}
+
+
+.submitButton{
+    border-radius: 5px;
+    background: #F1A661;
+    color: white;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+.tag{
+    width: min-content;
+    padding: 5px 10px;
+}
+
+.dialog{
+    width: 500px;
+    padding: 32px;
+    display: grid ;
+    justify-content: center;
+    align-items: center;
+}
+
+.body{
+    position: absolute;
+    top: 160px;
+    width: 88%;
+}
+
+.bodynonetab{
+    padding: 32px;
+}
+
+.table{
+    padding: 32px;
+}

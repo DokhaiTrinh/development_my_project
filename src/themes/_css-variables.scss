@@ -1,0 +1,792 @@
+@import "~@chatscope/chat-ui-kit-styles/themes/default/variables";
+
+:root {
+  
+  // Default font family
+  //
+
+  --cs-default-font-family: Helvetica Neue, Segoe UI, Helvetica, Arial, sans-serif;
+
+  // Colors
+  //
+
+  --cs-color-primary: #c6e3fa;
+  --cs-color-primary-light: #FFD8A9;
+  --cs-color-primary-dark: #F1A661;
+
+  --cs-color-secondary: #91ECEC;
+  --cs-color-secondary-light: #C2F9F9;
+  --cs-color-secondary-dark: #64D3D3;
+
+  // Material text colors
+  // http://marcodiiga.github.io/rgba-to-rgb-conversion
+  // Hex values are calculated based on white background 
+  // If you change background color rgb color will change, that is why its better to use rgba with opacity!
+  --cs-color-text: #{rgba(0, 0, 0, .87)}; // #212121
+  --cs-color-text-medium: #{rgba(0, 0, 0, .60)}; // #666666
+  --cs-color-text-disabled: #{rgba(0, 0, 0, .38)}; // #9e9e9e
+  --cs-color-text-inverted: #{invert($color-text)};
+
+  // Base colors
+  //
+  // It's not recommended to change this colors because white is white and black is... black :)
+  --cs-color-white: #fff;
+  --cs-color-black: #000;
+
+  --cs-default-bg-color: #{$color-white};
+
+  // Element colors
+  //
+
+  --cs-default-border-color: #{rgba-to-rgb(rgba(scale-color($color-primary-dark, $saturation: -55%), 0.4), $default-bg-color)};
+
+  // State colors
+  //
+
+  --cs-color-hover: #{$color-text};
+  --cs-color-bg-hover: #{rgba-to-rgb(rgba($color-primary-dark, 0.08), $default-bg-color)};
+  --cs-color-focus: #{$color-text};
+  --cs-color-bg-focus: #{rgba-to-rgb(rgba($color-primary-dark, 0.24), $color-primary-light)};
+  --cs-color-selected: #{darken($color-primary-dark, 25%)};
+  --cs-color-bg-selected: #{$color-bg-focus};
+  --cs-color-activated: #{darken($color-primary-dark, 25%)};
+  --cs-color-bg-activated: #{$color-bg-focus};
+  --cs-color-active: #{$color-primary-dark};
+  --cs-color-bg-active: #{$color-bg-activated};
+  --cs-color-disabled: #{$color-text-disabled};
+  --cs-color-bg-disabled: #{rgba(0, 0, 0, .38)};
+
+  // Functional colors
+  //
+
+  --cs-color-danger: #ec1212;
+  --cs-color-error: #{$color-danger};
+
+  // Border radius
+  //
+  // Default border radius for elements
+
+  --cs-default-border-radius: 0.7em;
+
+  // Opacity
+  //
+
+  --cs-disabled-opacity: 0.38;
+
+  ///////////////////////////////////////// Components /////////////////////////////////////////
+
+  // Avatar
+  // 
+
+  // Sizes
+  --cs-avatar-xs-width: 16px;
+  --cs-avatar-sm-width: 26px;
+  --cs-avatar-md-width: 42px;
+  --cs-avatar-lg-width: 68px;
+  --cs-avatar-fluid-width: 100%;
+
+  // Avatar group
+  // 
+
+  // Sizes
+  --cs-avatar-group-xs-width: 16px;
+  --cs-avatar-group-sm-width: 32px;
+  --cs-avatar-group-md-width: 100%;
+  --cs-avatar-group-lg-width: 80px;
+  --cs-avatar-group-fluid-width: 100%;
+
+  --cs-avatar-group-md-min-width: 40px;
+
+  // Buttons
+  // 
+  // General button element and dedicated (function specific) buttons
+
+  // Borders
+  --cs-button-border: solid 1px #{$default-border-color};
+  --cs-button-border-radius: #{$default-border-radius};
+
+  // Colors
+  --cs-button-color: #{$color-primary-dark};
+  --cs-button-bg-color: transparent;
+
+  // Fonts
+  --cs-button-font-size: 1em;
+  --cs-button-line-height: 1.5;
+
+  // Opacity
+  --cs-button-hover-opacity: 0.6;
+  --cs-button-disabled-opacity: #{$disabled-opacity};
+
+  // Spacing
+  --cs-button-margin: 0.1em 0.2em;
+  --cs-button-padding: 0.2em 0.7em;
+
+  // Add user button 
+
+  --cs-button-adduser-color: #{$button-color};
+  --cs-button-adduser-bg-color: #{$button-bg-color};
+
+  // Arrow button
+
+  --cs-button-arrow-color: #{$button-color};
+  --cs-button-arrow-bg-color: #{$button-bg-color};
+
+  // Ellipsis button
+
+  --cs-button-ellipis-color: #{$button-color};
+  --cs-button-ellipis-bg-color: #{$button-bg-color};
+
+  // Info button
+
+  --cs-button-info-color: #{$button-color};
+  --cs-button-info-bg-color: #{$button-bg-color};
+
+  // Star button
+
+  --cs-button-star-color: #{$button-color};
+  --cs-button-star-bg-color: #{$button-bg-color};
+
+  // Video call button
+
+  --cs-button-videocall-color: #{$button-color};
+  --cs-button-videocall-bg-color: #{$button-bg-color};
+
+  // Voice call button
+
+  --cs-button-voicecall-color: #{$button-color};
+  --cs-button-voicecall-bg-color: #{$button-bg-color};
+
+  // Send button
+
+  --cs-button-send-color: #{$button-color};
+  --cs-button-send-bg-color: #{$button-bg-color};
+
+  // Attachment button
+
+  --cs-button-attachment-color: #{$button-color};
+  --cs-button-attachment-bg-color: #{$button-bg-color};
+
+  // Chat container
+  //
+
+  // Borders
+  --cs-chat-container-message-input-border-top: solid 1px #{$default-border-color};
+  --cs-chat-container-message-input-border-right: solid 0px #{$default-border-color};
+  --cs-chat-container-message-input-border-bottom: solid 0px #{$default-border-color};
+  --cs-chat-container-message-input-border-left: solid 0px #{$default-border-color};
+
+  // Colors 
+  --cs-chat-container-color: #{$color-text};
+  --cs-chat-container-bg-color: #{$default-bg-color};
+  --cs-chat-container-message-input-color: #{$color-text};
+  --cs-chat-container-message-input-bg-color: #{$default-bg-color};
+  --cs-chat-container-input-toolbox-color: #{$color-text};
+  --cs-chat-container-input-toolbox-bg-color: #{$default-bg-color};
+
+  // Sizes
+  --cs-chat-container-min-width: 180px;
+
+  // Conversation
+  //
+
+  // Borders
+  --cs-conversation-border-top: #{$conversation-border-top};
+  --cs-conversation-border-right: #{$conversation-border-right};
+  --cs-conversation-border-bottom: #{$conversation-border-bottom};
+  --cs-conversation-border-left: #{$conversation-border-left};
+  --cs-conversation-active-border-top: #{$conversation-active-border-top};
+  --cs-conversation-active-border-right: #{$conversation-active-border-right};
+  --cs-conversation-active-border-bottom: #{$conversation-active-border-bottom};
+  --cs-conversation-active-border-left: #{$conversation-active-border-left};
+  --cs-conversation-activated-border-top: #{$conversation-activated-border-top};
+  --cs-conversation-activated-border-right: #{$conversation-activated-border-right};
+  --cs-conversation-activated-border-bottom: #{$conversation-activated-border-bottom};
+  --cs-conversation-activated-border-left: #{$conversation-activated-border-left};
+  
+  // Colors
+  --cs-conversation-color: #{$color-text};
+  --cs-conversation-bg-color: #{$default-bg-color};
+  --cs-conversation-unread-color: #{$color-white};
+  --cs-conversation-unread-bg-color: #{$color-danger};
+  --cs-conversation-hover-bg-color: #{$color-bg-hover};
+  --cs-conversation-unread-dot-color: #2e63e8;
+  --cs-conversation-name-color: #{$color-text};
+  --cs-conversation-name-activated-color: #{$color-activated};
+  --cs-conversation-info-color: #{$color-text-medium};
+  --cs-conversation-info-activated-color: #{$color-activated};
+  --cs-conversation-active-color: #{$conversation-color};
+  --cs-conversation-active-bg-color: #{$color-bg-active};
+  --cs-conversation-activated-color: #{$color-activated};
+  --cs-conversation-activated-bg-color: #{$color-bg-activated};
+
+  // Fonts
+  --cs-conversation-font-family: #{$default-font-family};
+  --cs-conversation-unread-font-size: 0.75em;
+  --cs-conversation-last-sender-name-font-weight: normal;
+  --cs-conversation-info-content-font-weight: normal;
+  --cs-conversation-info-activated-font-weight: #{$conversation-info-activated-font-weight};
+  --cs-conversation-activated-font-weight: #{$conversation-activated-font-weight};
+  --cs-conversation-name-activated-font-weight: #{$conversation-name-activated-font-weight};
+
+  // Sizes
+  --cs-conversation-unread-dot-width: 0.7em;
+
+  // Spacing
+  --cs-conversation-operations-margin: 0 0 0 auto;
+  --cs-conversation-last-activity-time-margin: 0 0 0 auto;
+  --cs-chat-container-input-toolbox-margin: 0;
+  --cs-chat-container-input-toolbox-padding: 0 0.8em 0.17em 0;
+
+  // Conversation header
+  //
+
+  // Borders
+  --cs-conversation-header-border-top: solid 0px #{$default-border-color};
+  --cs-conversation-header-border-right: solid 0px #{$default-border-color};
+  --cs-conversation-header-border-bottom: solid 1px #{$default-border-color};
+  --cs-conversation-header-border-left: solid 0px #{$default-border-color};
+
+  // Colors
+  --cs-conversation-header-bg-color: #{$color-primary-light};
+  --cs-conversation-header-color: #{color-by-background($conversation-header-bg-color, $color-text, $color-text-inverted)};
+  --cs-conversation-header-user-name-color: #{$conversation-header-color};
+  --cs-conversation-header-user-name-bg-color: #{$conversation-header-bg-color};
+  --cs-conversation-header-info-color: #{color-by-background($conversation-header-bg-color, $color-text-medium, $color-text-inverted)};
+  --cs-conversation-header-info-bg-color: #{$conversation-header-bg-color};
+  --cs-conversation-header-action-button-color: normal;
+  --cs-conversation-header-action-button-bg-color: transparent;
+  --cs-conversation-header-actions-color: #{$color-text};
+  --cs-conversation-header-actions-bg-color: transparent;
+
+  // Fonts
+  --cs-conversation-header-font-family: #{$default-font-family};
+  --cs-conversation-header-font-size: 1em;
+
+  // Sizes
+  --cs-conversation-header-content-min-width: 0;
+
+  // Spacing
+  --cs-conversation-header-actions-margin: 0 0 0 0.5em;
+
+  // Conversation list
+  //
+
+  // Colors
+  --cs-conversation-list-color: #{$color-text};
+  --cs-conversation-list-bg-color: transparent;
+  --cs-conversation-list-loading-more-bg-color: transparent;
+
+  // Sizes
+  --cs-conversation-list-loading-more-height: 1.2em;
+
+  // Spacing
+  --cs-conversation-list-loading-more-padding: 2px 0;
+
+  // Expansion panel
+  //
+
+  // Borders
+  --cs-expansion-panel-border: solid 1px #{$default-border-color};
+
+  // Colors
+  --cs-expansion-panel-color: #{$color-text};
+  --cs-expansion-panel-bg-color: #{$default-bg-color};
+  --cs-expansion-panel-header-color: #{$color-text-medium};
+  --cs-expansion-panel-header-bg-color: #{$color-primary-light};
+  --cs-expansion-panel-header-hover-color: #{$expansion-panel-header-color};
+  --cs-expansion-panel-header-hover-bg-color: #{$color-bg-hover};
+  --cs-expansion-panel-header-open-color: #{$expansion-panel-header-color};
+  --cs-expansion-panel-header-open-bg-color: #{$expansion-panel-header-bg-color};
+  --cs-expansion-panel-content-color: #{$color-text};
+  --cs-expansion-panel-content-bg-color: #{$default-bg-color};
+  --cs-expansion-panel-content-open-color: #{$expansion-panel-content-color};
+  --cs-expansion-panel-content-open-bg-color: #{$expansion-panel-content-bg-color};
+
+  // Fonts 
+  --cs-expansion-panel-font-family: #{$default-font-family};
+  --cs-expansion-panel-font-weight: normal;
+  --cs-expansion-panel-font-size: inherit;
+  --cs-expansion-panel-font-variant: normal;
+
+  --cs-expansion-panel-header-font-family: #{$default-font-family};
+  --cs-expansion-panel-header-font-weight: bold;
+  --cs-expansion-panel-header-font-size: 0.75em;
+  --cs-expansion-panel-header-font-variant: normal;
+
+  --cs-expansion-panel-content-font-family: #{$default-font-family};
+  --cs-expansion-panel-content-font-weight: normal;
+  --cs-expansion-panel-content-font-size: 0.8em;
+  --cs-expansion-panel-content-font-variant: normal;
+
+
+  // Input toolbox
+  //
+
+  // Colors
+  --cs-input-toolbox-send-btn-color: #{$color-secondary};
+  --cs-input-toolbox-upload-btn-color: #{$color-secondary};
+
+  // Fonts
+  --cs-input-toolbox-btn-font-size: 1.2em;
+
+  // Spacing
+  --cs-input-toolbox-btn-margin: 0 0.5em 0 0;
+  --cs-input-toolbox-margin: 0;
+  --cs-input-toolbox-padding: 0 0 0.4em 0;
+
+  // Loader
+  //
+
+  // Borders
+  --cs-loader-border-width: 0.2em;
+
+  // Colors
+  --cs-loader-color: #{$color-text};
+  --cs-loader-bg-color: transparent;
+  --cs-loader-spinner-color: #{$color-primary-dark};
+  --cs-loader-spinner-bg-color: #{$color-primary};
+
+  // Sizes
+  --cs-loader-width: 1.8em;
+  --cs-loader-height: 1.8em;
+
+  // Main container
+  //
+
+  // Borders
+  --cs-main-container-border: solid 1px #{$default-border-color};
+  --cs-main-container-conversation-list-border-top: solid 0px #{$default-border-color};
+  --cs-main-container-conversation-list-border-right: solid 1px #{$default-border-color};
+  --cs-main-container-conversation-list-border-bottom: solid 0px #{$default-border-color};
+  --cs-main-container-conversation-list-border-left: solid 0px #{$default-border-color};
+  --cs-main-container-chat-container-border-right: solid 0px #{$default-border-color};
+  --cs-main-container-sidebar-right-border-top: solid 0px #{$default-border-color};
+  --cs-main-container-sidebar-right-border-right: solid 0px #{$default-border-color};
+  --cs-main-container-sidebar-right-border-bottom: solid 0px #{$default-border-color};
+  --cs-main-container-sidebar-right-border-left: solid 1px #{$default-border-color};
+
+  // Colors
+  --cs-main-container-color: #{$color-text};
+  --cs-main-container-bg-color: #{$default-bg-color};
+
+  // Fonts
+  --cs-main-container-font-size: 1rem; // Font size for child elements are relative to this size
+
+  // Sizes
+  --cs-main-container-conversation-list-flex-basis: 300px;
+  --cs-main-container-sidebar-width: 300px;
+  --cs-main-container-sidebar-min-width: #{$main-container-sidebar-width};
+
+  --cs-main-container-sidebar-left-max-width: 320px;
+  --cs-main-container-sidebar-right-min-width: 150px;
+  --cs-main-container-sidebar-right-max-width: 320px;
+
+  // Message
+  // 
+
+  // Boolean flags
+  --cs-show-message-incoming-sender-name: false;
+  --cs-show-message-incoming-single-sender-name: true;
+  --cs-show-message-incoming-first-sender-name: true;
+  --cs-show-message-incoming-last-sender-name: false;
+
+  --cs-show-message-outgoing-sender-name: false;
+  --cs-show-message-outgoing-single-sender-name: false;
+  --cs-show-message-outgoing-first-sender-name: false;
+  --cs-show-message-outgoing-last-sender-name: false;
+
+  --cs-show-message-incoming-sent-time: false;
+  --cs-show-message-incoming-single-sent-time: true;
+  --cs-show-message-incoming-first-sent-time: true;
+  --cs-show-message-incoming-last-sent-time: false;
+
+  --cs-show-message-outgoing-sent-time: false;
+  --cs-show-message-outgoing-single-sent-time: true;
+  --cs-show-message-outgoing-first-sent-time: true;
+  --cs-show-message-outgoing-last-sent-time: false;
+
+  // Avatar flags
+  /*--cs-show-message-incoming-avatar: false;
+  --cs-show-message-incoming-single-avatar: true;
+  --cs-show-message-incoming-first-avatar: false;
+  --cs-show-message-incoming-last-avatar: true;
+
+  --cs-show-message-outgoing-avatar: false;
+  --cs-show-message-outgoing-single-avatar: true;
+  --cs-show-message-outgoing-first-avatar: false;
+  --cs-show-message-outgoing-last-avatar: true;*/
+
+  // Borders
+  --cs-message-base-radius: #{$default-border-radius};
+
+  --cs-message-border-radius: 0;
+
+  // Border radius for single incoming message
+  --cs-message-incoming-single-border-radius: #{$message-border-radius};
+
+  // Border radius for first incoming message
+  --cs-message-incoming-first-border-radius: #{$message-border-radius $message-border-radius $message-border-radius 0};
+
+  // Border radius for last incoming message
+  --cs-message-incoming-last-border-radius: 0 #{$message-border-radius $message-border-radius $message-border-radius};
+
+  // Border radius for single outgoing message
+  --cs-message-outgoing-single-border-radius: #{$message-border-radius};
+
+  // Border radius for first outgoing message
+  --cs-message-outgoing-first-border-radius: #{$message-border-radius $message-border-radius 0 $message-border-radius};
+
+  // Border radius for last outgoing message
+  --cs-message-outgoing-last-border-radius: #{$message-border-radius $message-border-radius $message-border-radius $message-border-radius};
+
+  // Border radius for content
+  --cs-message-content-border-radius: #{$message-base-radius $message-base-radius $message-base-radius $message-base-radius};
+
+  // Border radius for normal incoming message content
+  --cs-message-incoming-content-border-radius: #{0 $message-base-radius $message-base-radius 0};
+
+  // Border radius for single incoming message content
+  --cs-message-incoming-content-single-border-radius: #{0 $message-base-radius $message-base-radius $message-base-radius};
+
+  // Border radius for first incoming message content
+  --cs-message-incoming-content-first-border-radius: #{0 $message-base-radius $message-base-radius 0};
+
+  // Border radius for last incoming message content
+  --cs-message-incoming-content-last-border-radius: #{0 $message-base-radius 0 $message-base-radius};
+
+  // Border radius for normal outgoing message content
+  --cs-message-outgoing-content-border-radius: #{$message-base-radius 0 0 $message-base-radius};
+
+  // Border radius for single outgoing message content
+  --cs-message-outgoing-content-single-border-radius: #{$message-base-radius $message-base-radius 0 $message-base-radius};
+
+  // Border radius for first outgoing message content
+  --cs-message-outgoing-content-first-border-radius: #{$message-base-radius 0 0 $message-base-radius};
+
+  // Border radius for last outgoing message content
+  --cs-message-outgoing-content-last-border-radius: #{$message-base-radius 0 $message-base-radius $message-base-radius};
+
+  // Colors
+  --cs-message-color: #{$color-text};
+  --cs-message-bg-color: transparent;
+
+  --cs-message-header-color: #{lighten($color-text, 30)};
+  --cs-message-header-bg-color: transparent;
+
+  --cs-message-footer-color: #{lighten($color-text, 30)};
+  --cs-message-footer-bg-color: transparent;
+
+  --cs-message-incoming-color: #{$message-color};
+  --cs-message-incoming-bg-color: #{$message-bg-color};
+
+  --cs-message-outgoing-color: #{$message-color};
+  --cs-message-outgoing-bg-color: transparent;
+
+  --cs-message-sender-name-color: #{$message-header-color};
+  --cs-message-sender-name-bg-color: transparent;
+
+  --cs-message-sent-time-color: #{$message-header-color};
+  --cs-message-sent-time-bg-color: transparent;
+
+  --cs-message-content-color: #{$color-text};
+  --cs-message-content-bg-color: #{$color-primary};
+
+  --cs-message-content-incoming-color: #{$color-text};
+  --cs-message-content-incoming-bg-color: #{$message-content-bg-color};
+
+  --cs-message-content-outgoing-color: #{$color-text};
+  --cs-message-content-outgoing-bg-color: #{$color-primary-dark};
+
+  // Fonts
+  --cs-message-font-size: 1em;
+  --cs-message-font-family: #{$default-font-family};
+
+  --cs-message-content-font-family: #{$default-font-family};
+  --cs-message-content-font-weight: normal;
+  --cs-message-content-font-size: 0.91em;
+  --cs-message-content-font-variant: normal;
+
+  // Sizes
+  --cs-message-avatar-width: 42px;
+
+  // Spacing
+  --cs-message-margin:0; // Default margin for message
+  --cs-message-only-child-margin: 0.2em 0 0 0;
+  --cs-message-not-only-child-margin: 0.2em 0 0 0;
+
+  --cs-message-header-margin: 0 0.2em 0.1em 0.2em;
+  --cs-message-footer-margin: 0.1em 0.2em 0 0.2em;
+
+  --cs-message-content-margin-top: 0;
+  --cs-message-monologue-margin-top: 0.4em;
+
+  --cs-message-avatar-horizontal-margin: 8px; // Pixels because need to calculate with avatar width
+  --cs-message-avatar-margin: #{0 $message-avatar-horizontal-margin 0 0};
+  --cs-message-incoming-avatar-margin: #{0 $message-avatar-horizontal-margin 0 0};
+  --cs-message-outgoing-avatar-margin: #{0 0 0 $message-avatar-horizontal-margin};
+
+  // Message group
+  //
+
+  // Borders
+  --cs-message-group-message-base-radius: #{$default-border-radius};
+  // Border radius for normal incoming message content
+  --cs-message-group-incoming-message-content-border-radius: #{0 $message-group-message-base-radius $message-group-message-base-radius 0};
+  // Border radius for single incoming message content
+  --cs-message-group-incoming-message-content-single-border-radius: #{0 $message-group-message-base-radius $message-group-message-base-radius $message-group-message-base-radius};
+  // Border radius for first message content in incoming group
+  --cs-message-group-incoming-message-content-first-border-radius: #{0 $message-group-message-base-radius $message-group-message-base-radius 0};
+  // Border radius for last message content in incoming group
+  --cs-message-group-incoming-message-content-last-border-radius: #{0 $message-group-message-base-radius 0 $message-group-message-base-radius};
+  // Border radius for normal outgoing message content
+  --cs-message-group-outgoing-message-content-border-radius: #{$message-group-message-base-radius 0 0 $message-group-message-base-radius};
+  // Border radius for single outgoing message content
+  --cs-message-group-outgoing-message-content-single-border-radius: #{$message-group-message-base-radius $message-group-message-base-radius 0 $message-group-message-base-radius};
+  // Border radius for first message content in outgoing group
+  --cs-message-group-outgoing-message-content-first-border-radius: #{$message-group-message-base-radius 0 0 $message-group-message-base-radius};
+  // Border radius for last message content in outgoing group
+  --cs-message-group-outgoing-message-content-last-border-radius: #{$message-group-message-base-radius 0 $message-group-message-base-radius $message-group-message-base-radius};
+
+  //  Colors
+  --cs-message-group-header-color: #{$color-text-medium};
+  --cs-message-group-header-bg-color: transparent;
+  --cs-message-group-footer-color: #{$color-text-medium};
+  --cs-message-group-footer-bg-color: transparent;
+  --cs-message-group-message-content-bg-color: #{$color-primary};
+
+  --cs-message-group-message-content-incoming-color: #{$color-text};
+  --cs-message-group-message-content-incoming-bg-color: #{$message-group-message-content-bg-color};
+
+  --cs-message-group-message-content-outgoing-color: #{$color-text};
+  --cs-message-group-message-content-outgoing-bg-color: #{$color-primary-dark};
+
+  // Fonts
+  --cs-message-group-header-font-size: 0.8em;
+  --cs-message-group-header-font-family: #{$default-font-family};
+
+  --cs-message-group-footer-font-size: 0.8em;
+  --cs-message-group-footer-font-family: #{$default-font-family};
+
+  // Spacing
+  --cs-message-group-margin: 0.4em 0 0 0;
+  --cs-message-group-header-margin: 0 0 0.2em 0;
+  --cs-message-group-footer-margin: 0.2em 0 0 0;
+
+  --cs-message-group-avatar-horizontal-margin: 8px;
+
+  --cs-message-group-header-padding: 0;
+  --cs-message-group-footer-padding: 0;
+
+  // Message input
+  //
+
+  // Borders
+  --cs-message-input-border-top: none;
+  --cs-message-input-border-right: none;
+  --cs-message-input-border-bottom: none;
+  --cs-message-input-border-left: none;
+
+  --cs-message-input-content-editor-wrapper-border-radius: #{$default-border-radius};
+
+  --cs-message-input-content-editor-border-top-width: 0;    // These variables
+  --cs-message-input-content-editor-border-right-width: 0;  // are used
+  --cs-message-input-content-editor-border-bottom-width: 0; // for some calculations
+  --cs-message-input-content-editor-border-left-width: 0;   // by _message-input.scss
+
+  --cs-message-input-content-editor-border-top: #{$message-input-content-editor-border-top-width none};
+  --cs-message-input-content-editor-border-right: #{$message-input-content-editor-border-right-width none};
+  --cs-message-input-content-editor-border-bottom: #{$message-input-content-editor-border-bottom-width none};
+  --cs-message-input-content-editor-border-left: #{$message-input-content-editor-border-left-width none};
+
+  // Colors
+  --cs-message-input-bg-color: #{$default-bg-color};
+  --cs-message-input-content-editor-color: #{$color-text};
+  --cs-message-input-content-editor-wrapper-bg-color: #{$color-primary};
+  --cs-message-input-content-editor-container-bg-color: #{$message-input-content-editor-wrapper-bg-color};
+  --cs-message-input-content-editor-bg-color: #{$message-input-content-editor-wrapper-bg-color};
+  --cs-message-input-content-editor-disabled-color: #{$color-text-medium};
+  --cs-message-input-content-editor-disabled-bg-color: #{rgba($message-input-content-editor-bg-color, 0.38)};
+
+  // Fonts
+  --cs-message-input-content-editor-font-family: #{$default-font-family};
+  --cs-message-input-content-editor-container-font-size: 0.94em;
+
+  // Sizes
+  --cs-message-input-max-lines: 4;
+
+  // Spacing
+  --cs-message-input-placeholder-color: #{$color-text-disabled};
+  --cs-message-input-padding: 0;
+
+  --cs-message-input-content-editor-wrapper-margin: 0;
+  --cs-message-input-content-editor-wrapper-padding: 0.6em 0.9em;
+  --cs-message-input-content-editor-container-padding-top: 0em;     // These variables
+  --cs-message-input-content-editor-container-padding-right: 0em;   // are used 
+  --cs-message-input-content-editor-container-padding-bottom: 0em;  // for some calculations
+  --cs-message-input-content-editor-container-padding-left: 0em;    // by _message-input.scss
+  --cs-message-input-content-editor-container-padding: #{$message-input-content-editor-container-padding-top $message-input-content-editor-container-padding-right $message-input-content-editor-container-padding-bottom $message-input-content-editor-container-padding-left};
+
+  // !!! Be careful, when set this to unitless value - calculations below will not work properly
+  // Also check if scroll is working properly after changing this value
+  --cs-message-input-content-editor-container-line-height: 1.35em;
+
+  // Message list
+  //
+
+  // Colors
+  --cs-message-list-color: #{$color-text};
+  --cs-message-list-bg-color: #{$default-bg-color};
+  --cs-message-list-typing-indicator-bg-color: #{$color-white};
+  --cs-message-list-loading-more-bg-color: #{$color-white};
+
+  // Sizes
+  --cs-message-list-loading-more-height: 1.2em;
+
+  // Spacing
+  --cs-message-list-scroll-wrapper-padding: 0 1.2em 0 0.8em;
+  --cs-message-list-loading-more-padding: 2px 0;
+  --cs-message-list-message-separator-margin-top: 1.2em;
+
+  // Message separator
+  //
+
+  // Colors
+  --cs-message-separator-color: #{$color-primary-dark};
+  --cs-message-separator-bg-color: #{$default-bg-color};
+  --cs-message-separator-font-size: 0.8em;
+  --cs-message-separator-font-family: #{$default-font-family};
+
+  --cs-message-separator-content-color: #{$message-separator-color};
+  --cs-message-separator-content-bg-color: #{$message-separator-bg-color};
+
+  --cs-message-separator-line-color: #{$message-separator-color};
+
+  // Spacing
+  --cs-message-separator-left-line-margin: 0 1em 0 0;
+  --cs-message-separator-right-line-margin: 0 0 0 1em;
+
+  // Overlay
+  //
+
+  // Colors
+  --cs-overlay-bg-color: rgba(198,227,250,0.38);
+
+  // Search
+  //
+
+  // Borders
+  --cs-search-border-radius: #{$default-border-radius};
+
+  //  Colors
+  --cs-search-bg-color: #{$color-primary};
+  --cs-search-color: #{$color-text};
+  --cs-search-icon-color: #{$color-primary-dark};
+  --cs-search-clear-icon-color: #{$search-icon-color};
+  --cs-search-clear-icon-color-hover: rgba(#{$color-primary-dark}, 0.6);
+  --cs-search-placeholder-color: #{$color-text};
+  --cs-search-input-bg-color: #{$search-bg-color};
+  --cs-search-disabled-color: #{$color-disabled};
+  --cs-search-disabled-bg-color: #{$search-bg-color};
+  --cs-search-input-disabled-bg-color: #{$search-disabled-bg-color};
+
+  // Fonts
+  --cs-search-font-family: inherit;
+  --cs-search-font-size: inherit;
+  --cs-search-input-font-family: inherit;
+  --cs-search-input-font-size: 0.8em;
+
+  // Opacity
+  --cs-search-disabled-opacity: #{$disabled-opacity};
+
+  // Sidebar
+  //
+
+  // Colors
+  --cs-sidebar-right-bg-color: #{$default-bg-color};
+  --cs-sidebar-left-bg-color: #{$default-bg-color};
+
+  // Status
+  // 
+
+  // Colors
+  --cs-status-available-color: #00a27e;
+  --cs-status-unavailable-color: #a66d00;
+  --cs-status-away-color: #fc8b00;
+  --cs-status-dnd-color: #{$color-danger};
+  --cs-status-invisible-color: #c2d1d9;
+  --cs-status-eager-color: #ffee00;
+
+  --cs-status-selected-color: #{$color-selected};
+  --cs-status-selected-bg-color: #{$color-bg-selected};
+
+  --cs-status-available-name-color: #{$color-text};
+  --cs-status-unavailable-name-color: #{$color-text};
+  --cs-status-away-name-color: #{$color-text};
+  --cs-status-dnd-name-color: #{$color-text};
+  --cs-status-invisible-name-color: #{$color-text};
+  --cs-status-eager-name-color: #{$color-text};
+
+  // Fonts
+  --cs-status-xs-fontsize: 1em;
+  --cs-status-sm-fontsize: 1em;
+  --cs-status-md-fontsize: 1em;
+  --cs-status-lg-fontsize: 1em;
+
+  // Sizes
+  --cs-status-xs-width: 4px;
+  --cs-status-sm-width: 8px;
+  --cs-status-md-width: 11px;
+  --cs-status-lg-width: 14px;
+  --cs-status-fluid-width: 100%;
+
+  // Spacing
+  --cs-status-name-margin: 0 0 0 0.58em;
+
+  // Status list
+  // 
+
+  // Colors
+  --cs-status-list-color: #{$color-text};
+  --cs-status-list-bg-color: #{$default-bg-color};
+
+  --cs-status-list-margin: 0;
+  --cs-status-list-padding: 1em;
+
+  --cs-status-list-item-margin: 0;
+  --cs-status-list-item-padding: 0.4em 0.8em;
+
+  --cs-status-list-item-hover-color: #{$color-text-medium};
+  --cs-status-list-item-hover-bg-color: #{$color-bg-hover};
+
+  --cs-status-list-item-focus-color: #{$color-focus};
+  --cs-status-list-item-focus-bg-color: #{$color-bg-focus};
+
+  --cs-status-list-item-selected-color: #{$color-selected};
+  --cs-status-list-item-selected-bg-color: #{$color-bg-selected};
+
+  --cs-status-list-item-active-color: #{$color-text};
+  --cs-status-list-item-active-bg-color: #{$color-bg-active};
+
+  // Typing indicator
+  //
+
+  // Colors
+  --cs-typing-indicator-text-color: #{$color-primary-dark};
+  --cs-typing-indicator-text-bg-color: transparent;
+
+  --cs-typing-indicator-indicator-bg-color: transparent;
+  --cs-typing-indicator-dot-bg-color: #{$color-primary-dark};
+
+  // Fonts
+  --cs-typing-indicator-font-family: #{$default-font-family};
+  --cs-typing-indicator-font-size: inherit;
+
+  // Sizes
+  --cs-typing-indicator-dot-size: 4px;
+
+  // Spacing
+  --cs-typing-indicator-dot-spacing: 3px;
+  --cs-typing-indicator-text-margin: 0 0 0 0.5em;
+  
+  
+}
